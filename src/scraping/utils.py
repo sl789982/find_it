@@ -8,9 +8,8 @@ headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 5.1; rv:47.0) Gecko/20100101 F
            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'}
 
 
-def djinni():
+def djinni(base_url):
     session = requests.Session()
-    base_url = 'https://djinni.co/jobs/?primary_keyword=Python&location=%D0%9A%D0%B8%D0%B5%D0%B2'
 
     domain = 'https://djinni.co'
     urls = []
@@ -40,9 +39,8 @@ def djinni():
     return jobs
 
 
-def rabota():
+def rabota(base_url):
     session = requests.Session()
-    base_url = 'https://rabota.ua/jobsearch/vacancy_list?regionId=1&keyWords=python&period=2&lastdate='
 
     domain = 'https://rabota.ua'
     urls = []
@@ -89,10 +87,9 @@ def rabota():
     return jobs
 
 
-def work():
+def work(base_url):
     session = requests.Session()
 
-    base_url = 'https://www.work.ua/jobs-kyiv-python/'
     domain = 'https://www.work.ua'
     urls = []
     jobs = []
@@ -130,10 +127,8 @@ def work():
     return jobs
 
 
-def dou():
+def dou(base_url):
     session = requests.Session()
-
-    base_url = 'https://jobs.dou.ua/vacancies/?city=%D0%9A%D0%B8%D0%B5%D0%B2&category=Python'
 
     urls = []
     jobs = []
