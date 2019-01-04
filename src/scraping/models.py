@@ -24,6 +24,29 @@ class Specialty(models.Model):
         verbose_name_plural = 'Specialities'
 
 
+class Website(models.Model):
+    name = models.CharField(max_length=250, verbose_name='URL', unique=True)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name_plural = 'Websites'
+
+
+class Url(models.Model):
+    city = models.ForeignKey(City, on_delete=models.CASCADE, verbose_name='City')
+    specialty = models.ForeignKey(Specialty, on_delete=models.CASCADE, verbose_name='Specialty')
+    website = models.ForeignKey(Website, on_delete=models.CASCADE, verbose_name='Website')
+    url = models.CharField(max_length=250, verbose_name='URL', unique=True)
+
+    def __str__(self):
+        return self.url
+
+    class Meta:
+        verbose_name_plural = 'Urls'
+
+
 class Vacancy(models.Model):
     url = models.CharField(max_length=250, verbose_name='URL', unique=True)
     title = models.CharField(max_length=250, verbose_name='Title')
